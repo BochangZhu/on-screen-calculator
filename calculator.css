@@ -12,30 +12,45 @@ div{
 }
 
 .display{
-    font-size : 12px;
-    text-align: center;
+    font-size : 40px;
+    display: flex;
+    align-items: center;
     font-weight: bold;
-    height: 20%;
     box-sizing: border-box;
+    flex-basis: 15%;
+}
+
+.lower{
+    box-sizing: content-box;
+    display: flex;
+    flex-basis: 75%;
+
 }
 
 .calc-frame{
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
-    height: 500px;
+    width: 30vw;
+    height: 80vh;
     flex-direction: column;
     box-sizing: border-box;
 }
 
 .numbers{
     font-size: 8px;
-    width: 60%;
-    height: 70%;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-    align-items: center;
     box-sizing: border-box;
+    flex-basis: 70%;
+}
+
+.number{
+    font-size: 36px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 33.333%;
+    height: 33.333%;
 }
