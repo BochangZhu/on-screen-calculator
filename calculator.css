@@ -19,6 +19,7 @@ h1{
     font-weight: bold;
     box-sizing: border-box;
     margin: 2px;
+    flex-wrap: wrap;
     flex-basis: calc(15% - 4px);
     width: calc(100% - 4px)
 }
@@ -60,7 +61,7 @@ h1{
 
 .number{
     flex-basis: calc(33.333% - 6px);
-    height: calc(33.333% - 6px);
+    height: calc(25% - 6px);
     background-color: #bbbbbb;
     transition: background-color 0.2s ease-out;
 }
