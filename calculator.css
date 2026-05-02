@@ -6,9 +6,10 @@ h1{
 
 }
 
-div{
+.border{
     border: 2px solid black;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .display{
@@ -17,13 +18,15 @@ div{
     align-items: center;
     font-weight: bold;
     box-sizing: border-box;
-    flex-basis: 15%;
+    margin: 2px;
+    flex-basis: calc(15% - 4px);
+    width: calc(100% - 4px)
 }
 
 .lower{
-    box-sizing: content-box;
+    box-sizing: border-box;
     display: flex;
-    flex-basis: 75%;
+    flex-basis: 85%;
 
 }
 
@@ -35,6 +38,7 @@ div{
     height: 80vh;
     flex-direction: column;
     box-sizing: border-box;
+    border: 4px inset black;
 }
 
 .numbers{
@@ -45,12 +49,49 @@ div{
     flex-basis: 70%;
 }
 
-.number{
+.number, .operator, .eqSign{
     font-size: 36px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-basis: 33.333%;
-    height: 33.333%;
+    margin: 3px;
+}
+
+.number{
+    flex-basis: calc(33.333% - 6px);
+    height: calc(33.333% - 6px);
+    background-color: #bbbbbb;
+    transition: background-color 0.2s ease-out;
+}
+.number:hover{
+    background-color: #928f8f; 
+}
+.operators{
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.operator{
+    height: calc(100%/7 - 6px);
+    width: calc(80% -6px);
+    background-color: #79c2d0;
+    transition: background-color 0.2s ease-out;
+
+}
+
+.operator:hover{
+    background-color: #63a4b1;
+}
+
+.eqSign{
+    margin: 4.5px;
+    height :calc(100%/7*2 - 9px);
+    width: calc(95%-9px);
+    background-color: rgb(207, 210, 36);
+    border:3px outset rgb(33, 33, 33);
+
 }
