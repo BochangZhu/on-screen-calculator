@@ -96,3 +96,11 @@ h1{
     border:3px outset rgb(33, 33, 33);
 
 }
+
+.CE{
+    background-color: #ffb5b5;
+}
+
+.CE:hover{
+    background-color: #bb8686; 
+}
