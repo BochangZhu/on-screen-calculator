@@ -1,5 +1,5 @@
 # Welcome to On-Screen Calculator 👋
-
+![calc](./CalcDemoPic.png)
 > On-Screen Calculator is a lightweight, html calculator that performs basic arithmetic operations.
 
 > Supports both keyboard and mouse control.
