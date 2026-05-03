@@ -32,7 +32,7 @@ let operate = (m,a,b) => {
                 return "0";
             };
             return divide(a,b);
-        case "**":
+        case "^":
             return power(a,b);
         default:
             // invalid calculation would to led restart of board
