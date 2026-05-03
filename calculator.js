@@ -52,7 +52,7 @@ let num1Turn = 1;
 let override = 1;
 
 // Init list
-let opList = [{text : "+", func : add}, {text : "-", func : substract}, {text: "*", func: multiply }, {text:"/", func:divide}, {text:"**", func:power}];
+let opList = [{text : "+", func : add}, {text : "-", func : substract}, {text: "*", func: multiply }, {text:"/", func:divide}, {text:"^", func:power}];
 
 
 // Helper func to display screen
@@ -103,7 +103,7 @@ for (let num = 0; num <= 9; num ++){
 let dotEntered = 0;
 let dotSign = document.createElement("div");
 dotSign.textContent = ".";
-dotSign.classList.add("number", "border");
+dotSign.classList.add("number", "border", "num.");
 dotSign.addEventListener("click", e =>{
     if (!dotEntered){
         if (num1Turn){
@@ -159,7 +159,7 @@ opList.forEach(op=>{
             updateDisplay();
         }
     })
-    currOp.classList.add("operator", "border");
+    currOp.classList.add("operator", "border", `op${op.text}`);
     operators.appendChild(currOp);
 
 });
@@ -179,3 +179,18 @@ eqSign.addEventListener("click", () => {
 })
 eqSign.classList.add("border", "eqSign");
 operators.appendChild(eqSign);
+
+
+// keyboard control for numbers
+
+document.addEventListener("keydown", (e)=>{
+    if (!isNaN(+e.key) && e.key != " "){
+        document.querySelector(`.num${e.key}`).click();
+    }
+    if (e.key == "Enter"){
+        eqSign.click();
+    }
+    if (e.key == "Backspace"){
+        clear.click();
+    }
+})
