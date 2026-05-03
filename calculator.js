@@ -100,11 +100,13 @@ for (let num = 0; num <= 9; num ++){
     numbers.appendChild(curr_num);
 }
 
+// dot sign also treat as number
 let dotEntered = 0;
 let dotSign = document.createElement("div");
 dotSign.textContent = ".";
 dotSign.classList.add("number", "border", "num.");
 dotSign.addEventListener("click", e =>{
+    // only add once, refreshed with num1Turn switch
     if (!dotEntered){
         if (num1Turn){
             if (override){
@@ -184,8 +186,8 @@ operators.appendChild(eqSign);
 // keyboard control for numbers
 
 document.addEventListener("keydown", (e)=>{
-    if (!isNaN(+e.key) && e.key != " "){
-        document.querySelector(`.num${e.key}`).click();
+    if ((!isNaN(+e.key) || e.key == ".") && e.key != " "){
+        document.querySelector(`.num${CSS.escape(e.key)}`).click();
     }
     if (e.key == "Enter"){
         eqSign.click();
@@ -193,4 +195,8 @@ document.addEventListener("keydown", (e)=>{
     if (e.key == "Backspace"){
         clear.click();
     }
+
+    // handle rest operators, ignore any invalid key input
+    const other = document.querySelector(`.op${CSS.escape(e.key)}`);
+    if (other) other.click();
 })
